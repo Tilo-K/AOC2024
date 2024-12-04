@@ -8,7 +8,7 @@ function matches(word: string) {
 
 function checkHorizontal(grid: string[][], startIdx: number, y: number) {
   const row = grid[y];
-  if (startIdx + searchWord.length >= row.length) return false;
+  if (startIdx + searchWord.length > row.length) return false;
 
   let word = row.join("").substring(startIdx, startIdx + searchWord.length);
 
@@ -71,8 +71,24 @@ function solvePart1(input: string) {
   console.log("Part 1:", found);
 }
 
+function isMas(word: string) {
+  return word === "MAS" || word === "SAM";
+}
+
 function solvePart2(input: string) {
-  console.log("Part 2:");
+  const grid = input.split("\n").map((row) => row.split(""));
+  let found = 0;
+
+  for (let y = 1; y < grid.length - 1; y++) {
+    for (let x = 1; x < grid[y].length; x++) {
+      let word1 = `${grid[y - 1][x - 1]}${grid[y][x]}${grid[y + 1][x + 1]}`;
+      let word2 = `${grid[y + 1][x - 1]}${grid[y][x]}${grid[y - 1][x + 1]}`;
+
+      if (isMas(word1) && isMas(word2)) found++;
+    }
+  }
+
+  console.log("Part 2:", found);
 }
 
 // const inFile = Bun.file("example-input.txt");
