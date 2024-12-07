@@ -20,6 +20,27 @@ function solvePart1(input: string) {
   console.log("Part 1:", sum);
 }
 
+function solvePart2(input: string) {
+  let possible = 0;
+  let sum = 0;
+  const lines = input.split("\n");
+
+  for (const line of lines) {
+    const target = parseInt(line.split(": ")[0]);
+    const nums = line
+      .split(": ")[1]
+      .split(" ")
+      .map((n) => parseInt(n));
+
+    const found = doStuff2(nums, target);
+    if (found === target) {
+      possible++;
+      sum += target;
+    }
+  }
+  console.log("Part 2:", sum);
+}
+
 function doStuff(
   nums: number[],
   target: number,
@@ -74,27 +95,6 @@ function doStuff2(
   if (concat === target) return concat;
 
   return -1;
-}
-
-function solvePart2(input: string) {
-  let possible = 0;
-  let sum = 0;
-  const lines = input.split("\n");
-
-  for (const line of lines) {
-    const target = parseInt(line.split(": ")[0]);
-    const nums = line
-      .split(": ")[1]
-      .split(" ")
-      .map((n) => parseInt(n));
-
-    const found = doStuff2(nums, target);
-    if (found === target) {
-      possible++;
-      sum += target;
-    }
-  }
-  console.log("Part 2:", sum);
 }
 
 // const inFile = Bun.file("example-input.txt");
