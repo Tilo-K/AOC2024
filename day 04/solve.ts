@@ -91,9 +91,13 @@ function solvePart2(input: string) {
   console.log("Part 2:", found);
 }
 
-// const inFile = Bun.file("example-input.txt");
-const inFile = Bun.file("input.txt");
-const input = await inFile.text();
+export async function day4() {
+  // const inFile = Bun.file("example-input.txt");
+  const inFile = Bun.file("input.txt");
+  const input = await inFile.text();
 
-solvePart1(input);
-solvePart2(input);
+  solvePart1(input);
+  solvePart2(input);
+}
+
+day4();

@@ -44,8 +44,12 @@ function solvePart2(input: string) {
   console.log("Part 2: ", similarity);
 }
 
-const inFile = Bun.file("input.txt");
-const input = await inFile.text();
+export async function day1() {
+  const inFile = Bun.file("input.txt");
+  const input = await inFile.text();
 
-solvePart1(input);
-solvePart2(input);
+  solvePart1(input);
+  solvePart2(input);
+}
+
+day1();

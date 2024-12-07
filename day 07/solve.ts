@@ -97,10 +97,14 @@ function doStuff2(
   return -1;
 }
 
-// const inFile = Bun.file("example-input.txt");
-const inFile = Bun.file("input.txt");
-let input = await inFile.text();
-input = input.replaceAll("\r", "");
+export async function day7() {
+  // const inFile = Bun.file("example-input.txt");
+  const inFile = Bun.file("input.txt");
+  let input = await inFile.text();
+  input = input.replaceAll("\r", "");
 
-solvePart1(input);
-solvePart2(input);
+  solvePart1(input);
+  solvePart2(input);
+}
+
+day7();

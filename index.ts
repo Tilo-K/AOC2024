@@ -1,1 +1,22 @@
-console.log("Hello via Bun!");
+import { day1 } from "./day 01/solve";
+import { day2 } from "./day 02/solve";
+import { day3 } from "./day 03/solve";
+import { day4 } from "./day 04/solve";
+import { day5 } from "./day 05/solve";
+import { day6 } from "./day 06/solve";
+import { day7 } from "./day 07/solve";
+
+console.log("===Day 1\t===");
+await day1();
+console.log("===Day 2\t===");
+await day2();
+console.log("===Day 3\t===");
+await day3();
+console.log("===Day 4\t===");
+await day4();
+console.log("===Day 5\t===");
+await day5();
+console.log("===Day 6\t===");
+await day6();
+console.log("===Day 7\t===");
+await day7();

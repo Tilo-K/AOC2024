@@ -73,9 +73,13 @@ function solvePart2(input: string) {
   console.log("Part 2", good);
 }
 
-// const inFile = Bun.file("example-input.txt");
-const inFile = Bun.file("input.txt");
-const input = await inFile.text();
+export async function day2() {
+  // const inFile = Bun.file("example-input.txt");
+  const inFile = Bun.file("input.txt");
+  const input = await inFile.text();
 
-solvePart1(input);
-solvePart2(input);
+  solvePart1(input);
+  solvePart2(input);
+}
+
+day2();
