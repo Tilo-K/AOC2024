@@ -5,6 +5,7 @@ import { day4 } from "./day 04/solve";
 import { day5 } from "./day 05/solve";
 import { day6 } from "./day 06/solve";
 import { day7 } from "./day 07/solve";
+import { day8 } from "./day 08/solve";
 
 console.log("===Day 1\t===");
 await day1();
@@ -20,3 +21,5 @@ console.log("===Day 6\t===");
 await day6();
 console.log("===Day 7\t===");
 await day7();
+console.log("===Day 8\t===");
+await day8();
